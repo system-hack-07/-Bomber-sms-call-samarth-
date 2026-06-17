@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/route.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/route.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "FASTSMS_KEY": "@fastsms_key",
+    "MSG91_KEY": "@msg91_key",
+    "MSG91_TEMPLATE": "@msg91_template",
+    "TWILIO_TOKEN": "@twilio_token",
+    "TWILIO_FROM": "@twilio_from",
+    "EXOTEL_CALLER_ID": "@exotel_caller_id",
+    "JIVA_KEY": "@jiva_key"
+  },
+  "functions": {
+    "api/route.js": {
+      "maxDuration": 60,
+      "memory": 512
+    }
+  }
+}
