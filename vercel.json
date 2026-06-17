@@ -28,11 +28,5 @@
     "TWILIO_FROM": "@twilio_from",
     "EXOTEL_CALLER_ID": "@exotel_caller_id",
     "JIVA_KEY": "@jiva_key"
-  },
-  "functions": {
-    "api/route.js": {
-      "maxDuration": 60,
-      "memory": 512
-    }
   }
 }
